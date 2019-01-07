@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/davidginanni/Documents/src/c/logAnalyzer/main.cpp" "/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles/logAnalyzer.dir/main.cpp.o"
   "/Users/davidginanni/Documents/src/c/logAnalyzer/src/FileLoader.cpp" "/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o"
+  "/Users/davidginanni/Documents/src/c/logAnalyzer/src/LineParser.cpp" "/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o"
+  "/Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp" "/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

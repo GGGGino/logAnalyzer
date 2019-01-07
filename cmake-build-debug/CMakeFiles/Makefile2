@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-d
 CMakeFiles/logAnalyzer.dir/all:
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/depend
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target logAnalyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target logAnalyzer"
 .PHONY : CMakeFiles/logAnalyzer.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/logAnalyzer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/logAnalyzer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/logAnalyzer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/logAnalyzer.dir/rule

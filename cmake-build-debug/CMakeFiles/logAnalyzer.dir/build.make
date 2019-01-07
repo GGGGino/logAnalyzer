@@ -83,19 +83,49 @@ CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidginanni/Documents/src/c/logAnalyzer/src/FileLoader.cpp -o CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.s
 
+CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o: CMakeFiles/logAnalyzer.dir/flags.make
+CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o: ../src/LineParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o -c /Users/davidginanni/Documents/src/c/logAnalyzer/src/LineParser.cpp
+
+CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidginanni/Documents/src/c/logAnalyzer/src/LineParser.cpp > CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.i
+
+CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidginanni/Documents/src/c/logAnalyzer/src/LineParser.cpp -o CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.s
+
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: CMakeFiles/logAnalyzer.dir/flags.make
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: ../src/LogChecker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o -c /Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp
+
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp > CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.i
+
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp -o CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.s
+
 # Object files for target logAnalyzer
 logAnalyzer_OBJECTS = \
 "CMakeFiles/logAnalyzer.dir/main.cpp.o" \
-"CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o"
+"CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o" \
+"CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o" \
+"CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o"
 
 # External object files for target logAnalyzer
 logAnalyzer_EXTERNAL_OBJECTS =
 
 logAnalyzer: CMakeFiles/logAnalyzer.dir/main.cpp.o
 logAnalyzer: CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o
+logAnalyzer: CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o
+logAnalyzer: CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o
 logAnalyzer: CMakeFiles/logAnalyzer.dir/build.make
 logAnalyzer: CMakeFiles/logAnalyzer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable logAnalyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable logAnalyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/logAnalyzer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

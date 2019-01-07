@@ -177,6 +177,60 @@ src/FileLoader.cpp.s:
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.s
 .PHONY : src/FileLoader.cpp.s
 
+src/LineParser.o: src/LineParser.cpp.o
+
+.PHONY : src/LineParser.o
+
+# target to build an object file
+src/LineParser.cpp.o:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o
+.PHONY : src/LineParser.cpp.o
+
+src/LineParser.i: src/LineParser.cpp.i
+
+.PHONY : src/LineParser.i
+
+# target to preprocess a source file
+src/LineParser.cpp.i:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.i
+.PHONY : src/LineParser.cpp.i
+
+src/LineParser.s: src/LineParser.cpp.s
+
+.PHONY : src/LineParser.s
+
+# target to generate assembly for a file
+src/LineParser.cpp.s:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.s
+.PHONY : src/LineParser.cpp.s
+
+src/LogChecker.o: src/LogChecker.cpp.o
+
+.PHONY : src/LogChecker.o
+
+# target to build an object file
+src/LogChecker.cpp.o:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o
+.PHONY : src/LogChecker.cpp.o
+
+src/LogChecker.i: src/LogChecker.cpp.i
+
+.PHONY : src/LogChecker.i
+
+# target to preprocess a source file
+src/LogChecker.cpp.i:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.i
+.PHONY : src/LogChecker.cpp.i
+
+src/LogChecker.s: src/LogChecker.cpp.s
+
+.PHONY : src/LogChecker.s
+
+# target to generate assembly for a file
+src/LogChecker.cpp.s:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.s
+.PHONY : src/LogChecker.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +246,12 @@ help:
 	@echo "... src/FileLoader.o"
 	@echo "... src/FileLoader.i"
 	@echo "... src/FileLoader.s"
+	@echo "... src/LineParser.o"
+	@echo "... src/LineParser.i"
+	@echo "... src/LineParser.s"
+	@echo "... src/LogChecker.o"
+	@echo "... src/LogChecker.i"
+	@echo "... src/LogChecker.s"
 .PHONY : help
 
 

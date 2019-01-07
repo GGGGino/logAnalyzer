@@ -6,7 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/Users/davidginanni/Documents/src/c/logAnalyzer/include/FileLoader.h
+string
+-
+fstream
+-
+
+/Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
+string
+-
+time.h
+-
+
 /Users/davidginanni/Documents/src/c/logAnalyzer/main.cpp
 iostream
 -
+fstream
+-
+string
+-
+include/FileLoader.h
+/Users/davidginanni/Documents/src/c/logAnalyzer/include/FileLoader.h
+include/LineParser.h
+/Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
 
