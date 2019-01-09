@@ -7,6 +7,7 @@
 
 log_analyzer::FileLoader::FileLoader(std::string &&path): path_(path) {}
 
-std::ifstream log_analyzer::FileLoader::loadFile() {
+const std::ifstream &log_analyzer::FileLoader::loadFile() {
+    //std::ifstream stream(path_);
     return std::ifstream(path_);
 }

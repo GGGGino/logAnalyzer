@@ -15,7 +15,7 @@ namespace log_analyzer {
 
     public:
         explicit FileLoader(std::string &&path);
-        std::ifstream loadFile();
+        const std::ifstream &loadFile();
         std::ifstream loadFile(std::string path);
     };
 }
