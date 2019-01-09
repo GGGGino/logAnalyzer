@@ -10,7 +10,7 @@ log_analyzer::CheckerInterface::CheckerInterface(vectorLines *lines): lines_(lin
 
 bool log_analyzer::ManyLogInTimeChecker::check() const{
     return true;
-    
+
     for (const LineParser &line: *lines_) {
 
     }

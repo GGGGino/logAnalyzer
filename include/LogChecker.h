@@ -12,7 +12,7 @@
 namespace log_analyzer {
     /** For academic purpose */
     typedef std::vector<LineParser> vectorLines;
-    typedef std::vector<CheckerInterface> vectorCheckers;
+    typedef std::vector<CheckerInterface *> vectorCheckers;
 
     class LogChecker {
     private:

@@ -15,8 +15,8 @@ void log_analyzer::LogChecker::setLines(const vectorLines &lines) {
 bool log_analyzer::LogChecker::checkViolation() {
     vectorCheckers *checkers = getCheckers();
 
-    for (auto const &checker: *checkers) {
-        if( !checker.check() ){
+    for (auto const *checker: *checkers) {
+        if( !checker->check() ){
             return false;
         }
     }
@@ -29,9 +29,9 @@ log_analyzer::vectorCheckers *log_analyzer::LogChecker::getCheckers() {
         return  &checkers_;
     }
 
-    ManyLogInTimeChecker checkMlt(&lines_);
+    ManyLogInTimeChecker *checkMlt = new ManyLogInTimeChecker(&lines_);
 
-    //checkers_.push_back(checkMlt);
+    checkers_.push_back(checkMlt);
 
     return &checkers_;
 }
