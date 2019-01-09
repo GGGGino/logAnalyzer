@@ -5,9 +5,19 @@ CMakeFiles/logAnalyzer.dir/main.cpp.o: ../include/FileLoader.h
 CMakeFiles/logAnalyzer.dir/main.cpp.o: ../include/LineParser.h
 CMakeFiles/logAnalyzer.dir/main.cpp.o: ../main.cpp
 
+CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o: ../include/Checkers.h
+CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o: ../include/LineParser.h
+CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o: ../include/LogChecker.h
+CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o: ../src/Checkers.cpp
+
 CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o: ../include/FileLoader.h
 CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o: ../src/FileLoader.cpp
 
 CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o: ../include/LineParser.h
 CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o: ../src/LineParser.cpp
+
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: ../include/Checkers.h
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: ../include/LineParser.h
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: ../include/LogChecker.h
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o: ../src/LogChecker.cpp
 

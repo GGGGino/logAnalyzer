@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o"
   "CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o"
   "CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o"
+  "CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o"
   "logAnalyzer.pdb"
   "logAnalyzer"
 )

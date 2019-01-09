@@ -7,18 +7,24 @@
 
 #include <vector>
 #include "LineParser.h"
+#include "Checkers.h"
 
 namespace log_analyzer {
     /** For academic purpose */
     typedef std::vector<LineParser> vectorLines;
+    typedef std::vector<CheckerInterface> vectorCheckers;
 
     class LogChecker {
     private:
-        std::vector<LineParser> lines_;
+        vectorLines lines_;
+        vectorCheckers checkers_;
 
     public:
         void addLine(LineParser line);
-        void setLines(const std::vector<LineParser> &lines);
+        void setLines(const vectorLines &lines);
+        /** For academic purpose yet */
+        vectorCheckers *getCheckers();
+        bool checkViolation();
     };
 }
 

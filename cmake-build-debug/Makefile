@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Checkers.o: src/Checkers.cpp.o
+
+.PHONY : src/Checkers.o
+
+# target to build an object file
+src/Checkers.cpp.o:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o
+.PHONY : src/Checkers.cpp.o
+
+src/Checkers.i: src/Checkers.cpp.i
+
+.PHONY : src/Checkers.i
+
+# target to preprocess a source file
+src/Checkers.cpp.i:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.i
+.PHONY : src/Checkers.cpp.i
+
+src/Checkers.s: src/Checkers.cpp.s
+
+.PHONY : src/Checkers.s
+
+# target to generate assembly for a file
+src/Checkers.cpp.s:
+	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.s
+.PHONY : src/Checkers.cpp.s
+
 src/FileLoader.o: src/FileLoader.cpp.o
 
 .PHONY : src/FileLoader.o
@@ -243,6 +270,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Checkers.o"
+	@echo "... src/Checkers.i"
+	@echo "... src/Checkers.s"
 	@echo "... src/FileLoader.o"
 	@echo "... src/FileLoader.i"
 	@echo "... src/FileLoader.s"

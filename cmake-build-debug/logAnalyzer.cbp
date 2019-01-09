@@ -80,13 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/include/Checkers.h">
+			<Option target="logAnalyzer"/>
+		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/include/FileLoader.h">
 			<Option target="logAnalyzer"/>
 		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h">
 			<Option target="logAnalyzer"/>
 		</Unit>
+		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/include/LogChecker.h">
+			<Option target="logAnalyzer"/>
+		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/main.cpp">
+			<Option target="logAnalyzer"/>
+		</Unit>
+		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/src/Checkers.cpp">
 			<Option target="logAnalyzer"/>
 		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/src/FileLoader.cpp">
@@ -96,9 +105,6 @@
 			<Option target="logAnalyzer"/>
 		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp">
-			<Option target="logAnalyzer"/>
-		</Unit>
-		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.h">
 			<Option target="logAnalyzer"/>
 		</Unit>
 		<Unit filename="/Users/davidginanni/Documents/src/c/logAnalyzer/CMakeLists.txt">

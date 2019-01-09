@@ -5,9 +5,19 @@ CMakeFiles/logAnalyzer.dir/main.cpp.o
  /Users/davidginanni/Documents/src/c/logAnalyzer/include/FileLoader.h
  /Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
  /Users/davidginanni/Documents/src/c/logAnalyzer/main.cpp
+CMakeFiles/logAnalyzer.dir/src/Checkers.cpp.o
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/Checkers.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/LogChecker.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/src/Checkers.cpp
 CMakeFiles/logAnalyzer.dir/src/FileLoader.cpp.o
  /Users/davidginanni/Documents/src/c/logAnalyzer/include/FileLoader.h
  /Users/davidginanni/Documents/src/c/logAnalyzer/src/FileLoader.cpp
 CMakeFiles/logAnalyzer.dir/src/LineParser.cpp.o
  /Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
  /Users/davidginanni/Documents/src/c/logAnalyzer/src/LineParser.cpp
+CMakeFiles/logAnalyzer.dir/src/LogChecker.cpp.o
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/Checkers.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/LineParser.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/include/LogChecker.h
+ /Users/davidginanni/Documents/src/c/logAnalyzer/src/LogChecker.cpp
