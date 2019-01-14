@@ -22,12 +22,12 @@ bool log_analyzer::ManyLogInTimeChecker::check() const {
     MapIpsLines ipsGrouped = logChecker.getLinesGouped();
     std::vector<std::string> badIps;
 
-    if( lines_->empty() )
-        return true;
-
     // if there are at least {maxCalls}calls in {maxRangeTime}seconds the ips are bad
     const int maxRangeTime = 2;
     const int maxCalls = 3;
+
+    if( lines_->empty() )
+        return true;
 
     for(const auto &vectorIps: ipsGrouped) {
         int linesConsecutiveCallsInRange = 0;
@@ -61,7 +61,7 @@ bool log_analyzer::ManyLogInTimeChecker::check() const {
         }
     }
 
-    return badIps.empty();
+    return !badIps.empty();
 }
 
 

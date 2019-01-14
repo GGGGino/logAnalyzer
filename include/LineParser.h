@@ -7,6 +7,8 @@
 
 #include <string>
 #include <time.h>
+#include <regex>
+#include <tclDecls.h>
 
 namespace log_analyzer {
     struct LineParser {
@@ -23,6 +25,8 @@ namespace log_analyzer {
         std::string userAgent_;
 
         explicit LineParser(const std::string &line = "");
+
+        inline int8_t getCallType();
     };
 }
 

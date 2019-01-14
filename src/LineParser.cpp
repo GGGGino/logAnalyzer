@@ -22,3 +22,17 @@ log_analyzer::LineParser::LineParser(const std::string &line) {
 
     std::cout << completeString_ << std::endl;
 }
+
+int8_t log_analyzer::LineParser::getCallType() {
+    // check if the path requested is asset or document
+    // do regex to check if is it assets then respond
+    std::regex regexAsset(R"lit((\.css|\.gif|\.js|\.jpg|\.jpeg|\.png))lit");
+    std::smatch sm;
+    std::regex_search(this->url_, sm, regexAsset);
+
+    if( sm.empty() ) {
+        return int8_t(1);
+    }else{
+        return int8_t(2);
+    }
+}
