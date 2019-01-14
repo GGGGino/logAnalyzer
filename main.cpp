@@ -3,6 +3,7 @@
 #include <string>
 #include "include/FileLoader.h"
 #include "include/LineParser.h"
+#include "include/LogChecker.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -14,11 +15,18 @@ int main() {
     }
 
     std::string line;
+    log_analyzer::LogChecker logChecker;
 
     while ( getline(fileS, line) ){
         // std::cout << line << std::endl;
         log_analyzer::LineParser lineParsed(line);
-        std::cout << "pippo";
+        logChecker.addLine(lineParsed);
+    }
+
+    bool checkViolation = logChecker.checkViolation();
+
+    if( !checkViolation ) {
+        std::cout << "Attack started" << std::endl;
     }
 
     return 0;
