@@ -23,6 +23,8 @@ string
 -
 time.h
 -
+regex
+-
 
 /Users/davidginanni/Documents/src/c/logAnalyzer/include/LogChecker.h
 vector

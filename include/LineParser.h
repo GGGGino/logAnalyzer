@@ -8,7 +8,6 @@
 #include <string>
 #include <time.h>
 #include <regex>
-#include <tclDecls.h>
 
 namespace log_analyzer {
     struct LineParser {

@@ -27,6 +27,12 @@ namespace log_analyzer {
         MapIpsLines getLinesGouped();
         /** For academic purpose yet */
         vectorCheckers *getCheckers();
+
+        /**
+         * Return true if there is a violation
+         *
+         * @return
+         */
         bool checkViolation();
     };
 }
