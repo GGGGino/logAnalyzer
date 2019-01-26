@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "LineParser.h"
+#include "Uri.h"
 
 namespace log_analyzer {
     class LogChecker;
@@ -29,6 +30,7 @@ namespace log_analyzer {
     class SqlInjectionChecker: public CheckerInterface {
     public:
         bool check() const;
+        bool checkUrl(const log_analyzer::Uri *url) const;
         explicit SqlInjectionChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
     };
 }

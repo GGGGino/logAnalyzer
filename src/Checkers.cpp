@@ -73,6 +73,16 @@ bool log_analyzer::SqlInjectionChecker::check() const{
         return true;
 
     for (const LineParser &line: *lines_) {
-
+        if( checkUrl(&line.realUrl_) )
+            return true;
     }
+}
+
+bool log_analyzer::SqlInjectionChecker::checkUrl(const log_analyzer::Uri *url) const {
+    std::string query = url->query_;
+
+    if( query.find("SELECT") != std::string::npos )
+        return true;
+
+    return false;
 }
