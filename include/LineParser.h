@@ -8,6 +8,7 @@
 #include <string>
 #include <time.h>
 #include <regex>
+#include "Uri.h"
 
 namespace log_analyzer {
     struct LineParser {
@@ -17,6 +18,7 @@ namespace log_analyzer {
         tm dateTimeP_;
         std::string method_;
         std::string url_;
+        log_analyzer::Uri realUrl_;
         std::string typehttp_;
         std::string responseStatus_;
         int size_;

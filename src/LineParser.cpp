@@ -14,6 +14,7 @@ log_analyzer::LineParser::LineParser(const std::string &line) {
     strptime(dateTime_.c_str(), "%d/%b/%Y:%H:%M:%S", &dateTimeP_);
     method_ = sm[3];
     url_ = sm[4];
+    realUrl_ = Uri(url_);
     typehttp_ = sm[5];
     responseStatus_ = sm[6];
     size_ = std::stoi(sm[7]);
