@@ -84,5 +84,11 @@ bool log_analyzer::SqlInjectionChecker::checkUrl(const log_analyzer::Uri *url) c
     if( query.find("SELECT") != std::string::npos )
         return true;
 
+    if( query.find("UNION") != std::string::npos )
+        return true;
+
+    if( query.find("WHERE") != std::string::npos )
+        return true;
+
     return false;
 }

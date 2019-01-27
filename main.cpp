@@ -4,6 +4,11 @@
 #include "include/FileLoader.h"
 #include "include/LineParser.h"
 #include "include/LogChecker.h"
+#include "include/window/WindowManager.h"
+
+void createPanel() {
+    log_analyzer::WindowManager windowManager;
+}
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -28,6 +33,8 @@ int main() {
     if( !checkViolation ) {
         std::cout << "Attack started" << std::endl;
     }
+
+    createPanel();
 
     return 0;
 }

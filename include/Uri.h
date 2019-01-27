@@ -19,6 +19,7 @@ namespace log_analyzer {
 
         Uri();
         explicit Uri(std::string &url);
+        bool operator ==(Uri &&uri);
     };
 }
 

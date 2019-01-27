@@ -21,3 +21,7 @@ log_analyzer::Uri::Uri(std::string &url) {
 }
 
 log_analyzer::Uri::Uri() {}
+
+bool log_analyzer::Uri::operator ==(log_analyzer::Uri &&uri) {
+    return completeString_ == uri.completeString_;
+}
