@@ -1,0 +1,3 @@
+/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles/rebuild_cache.dir
+/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles/edit_cache.dir
+/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles/logAnalyzer.dir

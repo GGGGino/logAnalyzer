@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/./LineParser.h
+string
+-
+time.h
+-
+regex
+-
+Uri.h
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/./Uri.h
+
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/./Uri.h
+string
+-
+
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/LineParser.cpp
+regex
+-
+iostream
+-
+./LineParser.h
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/./LineParser.h
+
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/Uri.cpp
+regex
+-
+string
+-
+iostream
+-
+./Uri.h
+/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser/./Uri.h
+

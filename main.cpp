@@ -1,12 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "include/FileLoader.h"
-#include "include/LineParser.h"
-#include "include/LogChecker.h"
+#include "fileLoader/FileLoader.h"
+#include "lineParser/LineParser.h"
+#include "checker/LogChecker.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader("../error.log");
     std::ifstream fileS = fileLoader.loadFile();
 

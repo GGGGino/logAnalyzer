@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
-project(logAnalyzer)
+set (VERSION 0.1)
+set (PACKAGE logAnalyzer)
+project(${PACKAGE})
+
+add_subdirectory(lineParser)
+add_subdirectory(fileLoader)
+add_subdirectory(checker)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-lncurses")
 
-add_executable(logAnalyzer main.cpp src/FileLoader.cpp include/FileLoader.h include/LineParser.h src/LineParser.cpp src/LogChecker.cpp include/LogChecker.h include/Checkers.h src/Checkers.cpp include/Uri.h src/Uri.cpp)
+add_executable(${PACKAGE} main.cpp)
+
+target_link_libraries(${PACKAGE} lineParser fileLoader checker)
