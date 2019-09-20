@@ -68,10 +68,12 @@ CMAKE_BINARY_DIR = /Users/davidginanni/Documents/src/c/logAnalyzer/build
 # Target rules for target CMakeFiles/logAnalyzer.dir
 
 # All Build rule for target.
-CMakeFiles/logAnalyzer.dir/all:
+CMakeFiles/logAnalyzer.dir/all: lineParser/CMakeFiles/lineParser.dir/all
+CMakeFiles/logAnalyzer.dir/all: fileLoader/CMakeFiles/fileLoader.dir/all
+CMakeFiles/logAnalyzer.dir/all: checker/CMakeFiles/checker.dir/all
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/depend
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=1,2 "Built target logAnalyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=9,10 "Built target logAnalyzer"
 .PHONY : CMakeFiles/logAnalyzer.dir/all
 
 # Include target in all.
@@ -81,7 +83,7 @@ all: CMakeFiles/logAnalyzer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/logAnalyzer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/logAnalyzer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 0
 .PHONY : CMakeFiles/logAnalyzer.dir/rule
@@ -98,6 +100,171 @@ CMakeFiles/logAnalyzer.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/logAnalyzer.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory lineParser
+
+# Convenience name for "all" pass in the directory.
+lineParser/all: lineParser/CMakeFiles/lineParser.dir/all
+
+.PHONY : lineParser/all
+
+# Convenience name for "clean" pass in the directory.
+lineParser/clean: lineParser/CMakeFiles/lineParser.dir/clean
+
+.PHONY : lineParser/clean
+
+# Convenience name for "preinstall" pass in the directory.
+lineParser/preinstall:
+
+.PHONY : lineParser/preinstall
+
+#=============================================================================
+# Target rules for target lineParser/CMakeFiles/lineParser.dir
+
+# All Build rule for target.
+lineParser/CMakeFiles/lineParser.dir/all:
+	$(MAKE) -f lineParser/CMakeFiles/lineParser.dir/build.make lineParser/CMakeFiles/lineParser.dir/depend
+	$(MAKE) -f lineParser/CMakeFiles/lineParser.dir/build.make lineParser/CMakeFiles/lineParser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=6,7,8 "Built target lineParser"
+.PHONY : lineParser/CMakeFiles/lineParser.dir/all
+
+# Include target in all.
+all: lineParser/CMakeFiles/lineParser.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+lineParser/CMakeFiles/lineParser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 lineParser/CMakeFiles/lineParser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 0
+.PHONY : lineParser/CMakeFiles/lineParser.dir/rule
+
+# Convenience name for target.
+lineParser: lineParser/CMakeFiles/lineParser.dir/rule
+
+.PHONY : lineParser
+
+# clean rule for target.
+lineParser/CMakeFiles/lineParser.dir/clean:
+	$(MAKE) -f lineParser/CMakeFiles/lineParser.dir/build.make lineParser/CMakeFiles/lineParser.dir/clean
+.PHONY : lineParser/CMakeFiles/lineParser.dir/clean
+
+# clean rule for target.
+clean: lineParser/CMakeFiles/lineParser.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory fileLoader
+
+# Convenience name for "all" pass in the directory.
+fileLoader/all: fileLoader/CMakeFiles/fileLoader.dir/all
+
+.PHONY : fileLoader/all
+
+# Convenience name for "clean" pass in the directory.
+fileLoader/clean: fileLoader/CMakeFiles/fileLoader.dir/clean
+
+.PHONY : fileLoader/clean
+
+# Convenience name for "preinstall" pass in the directory.
+fileLoader/preinstall:
+
+.PHONY : fileLoader/preinstall
+
+#=============================================================================
+# Target rules for target fileLoader/CMakeFiles/fileLoader.dir
+
+# All Build rule for target.
+fileLoader/CMakeFiles/fileLoader.dir/all:
+	$(MAKE) -f fileLoader/CMakeFiles/fileLoader.dir/build.make fileLoader/CMakeFiles/fileLoader.dir/depend
+	$(MAKE) -f fileLoader/CMakeFiles/fileLoader.dir/build.make fileLoader/CMakeFiles/fileLoader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=4,5 "Built target fileLoader"
+.PHONY : fileLoader/CMakeFiles/fileLoader.dir/all
+
+# Include target in all.
+all: fileLoader/CMakeFiles/fileLoader.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+fileLoader/CMakeFiles/fileLoader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 fileLoader/CMakeFiles/fileLoader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 0
+.PHONY : fileLoader/CMakeFiles/fileLoader.dir/rule
+
+# Convenience name for target.
+fileLoader: fileLoader/CMakeFiles/fileLoader.dir/rule
+
+.PHONY : fileLoader
+
+# clean rule for target.
+fileLoader/CMakeFiles/fileLoader.dir/clean:
+	$(MAKE) -f fileLoader/CMakeFiles/fileLoader.dir/build.make fileLoader/CMakeFiles/fileLoader.dir/clean
+.PHONY : fileLoader/CMakeFiles/fileLoader.dir/clean
+
+# clean rule for target.
+clean: fileLoader/CMakeFiles/fileLoader.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory checker
+
+# Convenience name for "all" pass in the directory.
+checker/all: checker/CMakeFiles/checker.dir/all
+
+.PHONY : checker/all
+
+# Convenience name for "clean" pass in the directory.
+checker/clean: checker/CMakeFiles/checker.dir/clean
+
+.PHONY : checker/clean
+
+# Convenience name for "preinstall" pass in the directory.
+checker/preinstall:
+
+.PHONY : checker/preinstall
+
+#=============================================================================
+# Target rules for target checker/CMakeFiles/checker.dir
+
+# All Build rule for target.
+checker/CMakeFiles/checker.dir/all:
+	$(MAKE) -f checker/CMakeFiles/checker.dir/build.make checker/CMakeFiles/checker.dir/depend
+	$(MAKE) -f checker/CMakeFiles/checker.dir/build.make checker/CMakeFiles/checker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=1,2,3 "Built target checker"
+.PHONY : checker/CMakeFiles/checker.dir/all
+
+# Include target in all.
+all: checker/CMakeFiles/checker.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+checker/CMakeFiles/checker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 checker/CMakeFiles/checker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles 0
+.PHONY : checker/CMakeFiles/checker.dir/rule
+
+# Convenience name for target.
+checker: checker/CMakeFiles/checker.dir/rule
+
+.PHONY : checker
+
+# clean rule for target.
+checker/CMakeFiles/checker.dir/clean:
+	$(MAKE) -f checker/CMakeFiles/checker.dir/build.make checker/CMakeFiles/checker.dir/clean
+.PHONY : checker/CMakeFiles/checker.dir/clean
+
+# clean rule for target.
+clean: checker/CMakeFiles/checker.dir/clean
 
 .PHONY : clean
 

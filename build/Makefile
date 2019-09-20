@@ -123,6 +123,45 @@ logAnalyzer/fast:
 	$(MAKE) -f CMakeFiles/logAnalyzer.dir/build.make CMakeFiles/logAnalyzer.dir/build
 .PHONY : logAnalyzer/fast
 
+#=============================================================================
+# Target rules for targets named lineParser
+
+# Build rule for target.
+lineParser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lineParser
+.PHONY : lineParser
+
+# fast build rule for target.
+lineParser/fast:
+	$(MAKE) -f lineParser/CMakeFiles/lineParser.dir/build.make lineParser/CMakeFiles/lineParser.dir/build
+.PHONY : lineParser/fast
+
+#=============================================================================
+# Target rules for targets named fileLoader
+
+# Build rule for target.
+fileLoader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fileLoader
+.PHONY : fileLoader
+
+# fast build rule for target.
+fileLoader/fast:
+	$(MAKE) -f fileLoader/CMakeFiles/fileLoader.dir/build.make fileLoader/CMakeFiles/fileLoader.dir/build
+.PHONY : fileLoader/fast
+
+#=============================================================================
+# Target rules for targets named checker
+
+# Build rule for target.
+checker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 checker
+.PHONY : checker
+
+# fast build rule for target.
+checker/fast:
+	$(MAKE) -f checker/CMakeFiles/checker.dir/build.make checker/CMakeFiles/checker.dir/build
+.PHONY : checker/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +198,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... logAnalyzer"
+	@echo "... lineParser"
+	@echo "... fileLoader"
+	@echo "... checker"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

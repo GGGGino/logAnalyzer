@@ -79,6 +79,9 @@ logAnalyzer_EXTERNAL_OBJECTS =
 
 logAnalyzer: CMakeFiles/logAnalyzer.dir/main.cpp.o
 logAnalyzer: CMakeFiles/logAnalyzer.dir/build.make
+logAnalyzer: lineParser/liblineParser.dylib
+logAnalyzer: fileLoader/libfileLoader.dylib
+logAnalyzer: checker/libchecker.dylib
 logAnalyzer: CMakeFiles/logAnalyzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable logAnalyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/logAnalyzer.dir/link.txt --verbose=$(VERBOSE)
