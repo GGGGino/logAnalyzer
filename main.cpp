@@ -7,11 +7,9 @@
 #include "checker/LogChecker.h"
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
-using namespace std;
 
 int main(int ac, char* av[]) {
     try {
-
         po::options_description desc("Allowed options");
         desc.add_options()
             ("help", "produce help message")
@@ -34,7 +32,7 @@ int main(int ac, char* av[]) {
             std::cout << "Compression level was not set.\n";
         }
     }
-    catch(exception& e) {
+    catch(std::exception& e) {
         std::cerr << "error: " << e.what() << "\n";
         return 1;
     }

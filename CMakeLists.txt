@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-lncurses")
 
 set(Boost_INCLUDE_DIR /usr/local/include/boost)
-set(Boost_LIBRARY_DIR //usr/local/include/boost/stage/lib)
 find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIR})
