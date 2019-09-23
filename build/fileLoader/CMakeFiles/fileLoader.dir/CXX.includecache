@@ -6,15 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/Users/davidginanni/Documents/src/c/logAnalyzer/fileLoader/./FileLoader.h
-string
--
-fstream
--
-
-/Users/davidginanni/Documents/src/c/logAnalyzer/fileLoader/FileLoader.cpp
-iostream
--
-./FileLoader.h
-/Users/davidginanni/Documents/src/c/logAnalyzer/fileLoader/./FileLoader.h
-

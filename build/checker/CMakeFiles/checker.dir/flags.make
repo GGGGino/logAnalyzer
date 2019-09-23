@@ -6,5 +6,5 @@ CXX_FLAGS = -lncurses -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX1
 
 CXX_DEFINES = -Dchecker_EXPORTS
 
-CXX_INCLUDES = -I/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser 
+CXX_INCLUDES = -I/usr/local/include/boost -I/Users/davidginanni/Documents/src/c/logAnalyzer/lineParser 
 

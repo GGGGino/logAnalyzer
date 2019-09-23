@@ -6,5 +6,5 @@ CXX_FLAGS = -lncurses -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX1
 
 CXX_DEFINES = -DlineParser_EXPORTS
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/local/include/boost 
 
