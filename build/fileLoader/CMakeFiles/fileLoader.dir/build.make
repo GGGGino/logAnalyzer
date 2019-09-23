@@ -79,6 +79,7 @@ fileLoader_EXTERNAL_OBJECTS =
 
 fileLoader/libfileLoader.dylib: fileLoader/CMakeFiles/fileLoader.dir/FileLoader.cpp.o
 fileLoader/libfileLoader.dylib: fileLoader/CMakeFiles/fileLoader.dir/build.make
+fileLoader/libfileLoader.dylib: /usr/local/lib/libboost_filesystem.dylib
 fileLoader/libfileLoader.dylib: fileLoader/CMakeFiles/fileLoader.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/davidginanni/Documents/src/c/logAnalyzer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libfileLoader.dylib"
 	cd /Users/davidginanni/Documents/src/c/logAnalyzer/build/fileLoader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fileLoader.dir/link.txt --verbose=$(VERBOSE)
