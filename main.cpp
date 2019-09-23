@@ -30,7 +30,8 @@ int main(int ac, char* av[]) {
             log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader(fileName);
             std::ifstream fileS = fileLoader.loadFile();
 
-            std::cout << fileLoader.getFilePath();
+            if (fileLoader.fileExists())
+                std::cout << fileLoader.getFilePath();
 
             if( !fileS.is_open() ) {
                 return 0;

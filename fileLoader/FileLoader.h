@@ -18,6 +18,7 @@ namespace log_analyzer {
         std::ifstream loadFile();
         std::ifstream loadFile(std::string path);
         std::string getFilePath();
+        bool fileExists();
     };
 }
 

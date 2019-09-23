@@ -16,3 +16,7 @@ std::string log_analyzer::FileLoader::getFilePath() {
     boost::filesystem::path abs_path = boost::filesystem::complete(path_);
     return abs_path.string();
 }
+
+bool log_analyzer::FileLoader::fileExists() {
+    return boost::filesystem::exists(path_);
+}
