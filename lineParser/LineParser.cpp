@@ -17,7 +17,12 @@ log_analyzer::LineParser::LineParser(const std::string &line) {
     realUrl_ = Uri(url_);
     typehttp_ = sm[5];
     responseStatus_ = sm[6];
-    size_ = std::stoi(sm[7]);
+
+    std::string sizeTemp = sm[7];
+    if (!sizeTemp.empty()) {
+        size_ = std::stoi(sizeTemp);
+    }
+
     referrer_ = sm[8];
     userAgent_ = sm[9];
 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 set (VERSION 0.1)
 set (PACKAGE logAnalyzer)
 project(${PACKAGE})
@@ -6,7 +6,6 @@ project(${PACKAGE})
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-lncurses")
 
-set(Boost_INCLUDE_DIR /usr/local/include/boost)
 find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIR})

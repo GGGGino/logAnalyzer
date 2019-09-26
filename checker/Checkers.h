@@ -21,12 +21,6 @@ namespace log_analyzer {
         virtual bool check() const = 0;
     };
 
-    class ManyLogInTimeChecker: public CheckerInterface {
-    public:
-        bool check() const;
-        explicit ManyLogInTimeChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
-    };
-
     class SqlInjectionChecker: public CheckerInterface {
     public:
         bool check() const;
