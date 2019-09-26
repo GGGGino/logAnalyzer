@@ -4,8 +4,6 @@ set (PACKAGE logAnalyzer)
 project(${PACKAGE})
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "-lpanel")
-set(CMAKE_CXX_FLAGS "-lncurses")
 
 find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})

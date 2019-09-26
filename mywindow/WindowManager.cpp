@@ -4,6 +4,8 @@
 
 #include <string>
 #include <cstring>
+#include <sys/ioctl.h>
+#include <unistd.h>
 #include "./WindowManager.h"
 
 log_analyzer::WindowManager::WindowManager() {
@@ -61,16 +63,23 @@ log_analyzer::WindowManager::WindowManager() {
 void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     int x, y, i;
     char label[80];
+    struct winsize w;
 
-    wins[0] = newwin(NLINES, NCOLS, 0, 0);
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+
+    const unsigned short int fullWidth = w.ws_col;
+    const unsigned short int halfWidth = w.ws_col / 2;
+    const unsigned short int halfHeight = w.ws_row / 2;
+
+    wins[0] = newwin(halfHeight, halfWidth, 0, 0);
     sprintf(label, "Chose check");
     win_show(wins[0], label, 1);
 
-    wins[1] = newwin(NLINES, NCOLS, 0, NCOLS);
+    wins[1] = newwin(halfHeight, halfWidth, 0, halfWidth);
     sprintf(label, "Window Number %d", 2);
     win_show(wins[1], label, 2);
 
-    wins[2] = newwin(NLINES, NCOLS*2, NLINES, 0);
+    wins[2] = newwin(halfHeight, fullWidth, halfHeight, 0);
     sprintf(label, "Logs");
     win_show(wins[2], label, 2);
 }
