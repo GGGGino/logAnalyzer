@@ -1,7 +1,6 @@
 //
 // Created by david ginanni on 26/01/2019.
 //
-
 #include <string>
 #include <cstring>
 #include <sys/ioctl.h>
