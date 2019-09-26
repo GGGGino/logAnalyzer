@@ -11,8 +11,6 @@
 #include "./Checkers.h"
 
 namespace log_analyzer {
-    class CheckerInterface;
-
     class SqlInjectionChecker: public CheckerInterface {
     public:
         bool check() const;
