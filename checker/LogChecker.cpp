@@ -3,7 +3,7 @@
 //
 
 #include <map>
-#include "../include/LogChecker.h"
+#include "./LogChecker.h"
 
 void log_analyzer::LogChecker::addLine(log_analyzer::LineParser line) {
     lines_.push_back(line);

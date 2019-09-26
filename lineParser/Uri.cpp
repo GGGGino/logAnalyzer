@@ -5,7 +5,7 @@
 #include <regex>
 #include <string>
 #include <iostream>
-#include "../include/Uri.h"
+#include "./Uri.h"
 
 log_analyzer::Uri::Uri(std::string &url) {
     std::regex regExpr(R"lit((\w*):?\/?\/?([^/]*)(\/[^?]*)\??([^#]*)\#?(.*))lit");

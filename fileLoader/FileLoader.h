@@ -9,14 +9,16 @@
 #include <fstream>
 
 namespace log_analyzer {
-    class FileLoader {
+    class FileLoader{
     private:
         std::string path_;
 
     public:
-        explicit FileLoader(std::string &&path);
+        explicit FileLoader(std::string path);
         std::ifstream loadFile();
         std::ifstream loadFile(std::string path);
+        std::string getFilePath();
+        bool fileExists();
     };
 }
 

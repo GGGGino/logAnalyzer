@@ -6,8 +6,8 @@
 #define LOGANALYZER_CHECKERINTERFACE_H
 
 #include <vector>
-#include "LineParser.h"
-#include "Uri.h"
+#include "../lineParser/LineParser.h"
+#include "../lineParser/Uri.h"
 
 namespace log_analyzer {
     class LogChecker;
@@ -19,19 +19,6 @@ namespace log_analyzer {
     public:
         explicit CheckerInterface(std::vector<LineParser> *lines, LogChecker &logChecker);
         virtual bool check() const = 0;
-    };
-
-    class ManyLogInTimeChecker: public CheckerInterface {
-    public:
-        bool check() const;
-        explicit ManyLogInTimeChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
-    };
-
-    class SqlInjectionChecker: public CheckerInterface {
-    public:
-        bool check() const;
-        bool checkUrl(const log_analyzer::Uri *url) const;
-        explicit SqlInjectionChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
     };
 }
 
