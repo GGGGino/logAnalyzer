@@ -10,6 +10,7 @@
 #include "../lineParser/LineParser.h"
 #include "Checkers.h"
 #include "ManyLogInTimeChecker.h"
+#include "SqlInjectionChecker.h"
 
 namespace log_analyzer {
     /** For academic purpose */

@@ -20,13 +20,6 @@ namespace log_analyzer {
         explicit CheckerInterface(std::vector<LineParser> *lines, LogChecker &logChecker);
         virtual bool check() const = 0;
     };
-
-    class SqlInjectionChecker: public CheckerInterface {
-    public:
-        bool check() const;
-        bool checkUrl(const log_analyzer::Uri *url) const;
-        explicit SqlInjectionChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
-    };
 }
 
 #endif //LOGANALYZER_CHECKERINTERFACE_H
