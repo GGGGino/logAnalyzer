@@ -3,7 +3,8 @@
 //
 
 #include <string>
-#include "../../include/window/WindowManager.h"
+#include <cstring>
+#include "./WindowManager.h"
 
 log_analyzer::WindowManager::WindowManager() {
     int ch;
@@ -38,12 +39,12 @@ log_analyzer::WindowManager::WindowManager() {
 
     /* Show it on the screen */
     attron(COLOR_PAIR(4));
-    mvprintw(LINES - 2, 0, "Use tab to browse through the windows (F1 to Exit)");
+    mvprintw(LINES - 2, 0, "Use tab to browse through the windows (q to Exit)");
     attroff(COLOR_PAIR(4));
     doupdate();
 
     top = my_panels[2];
-    while((ch = getch()) != KEY_F(1))
+    while((ch = getch()) != 'q')
     {	switch(ch)
         {	case 9:
                 top = (PANEL *)panel_userptr(top);

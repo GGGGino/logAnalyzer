@@ -6,7 +6,7 @@
 #include "fileLoader/FileLoader.h"
 #include "lineParser/LineParser.h"
 #include "checker/LogChecker.h"
-#include "include/window/WindowManager.h"
+#include "mywindow/WindowManager.h"
 
 namespace po = boost::program_options;
 

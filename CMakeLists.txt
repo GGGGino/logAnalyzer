@@ -14,7 +14,8 @@ link_directories(${Boost_LIBRARY_DIR})
 add_subdirectory(lineParser)
 add_subdirectory(fileLoader)
 add_subdirectory(checker)
+add_subdirectory(mywindow)
 
 add_executable(${PACKAGE} main.cpp)
 
-target_link_libraries(${PACKAGE} lineParser fileLoader checker panel ${Boost_LIBRARIES})
+target_link_libraries(${PACKAGE} lineParser fileLoader checker mywindow panel ${Boost_LIBRARIES})
