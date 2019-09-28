@@ -23,6 +23,7 @@ namespace log_analyzer {
         WindowManager();
         void init_wins(WINDOW **wins, int n);
         void win_show(WINDOW *win, char *label, int label_color);
+        void waitInput();
         void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
         void print_in_body(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
     };

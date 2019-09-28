@@ -25,8 +25,6 @@ log_analyzer::LineParser::LineParser(const std::string &line) {
 
     referrer_ = sm[8];
     userAgent_ = sm[9];
-
-    std::cout << completeString_ << std::endl;
 }
 
 int8_t log_analyzer::LineParser::getCallType() {

@@ -43,11 +43,18 @@ log_analyzer::WindowManager::WindowManager() {
     mvprintw(LINES - 2, 0, "Use tab to browse through the windows (q to Exit)");
     attroff(COLOR_PAIR(4));
     doupdate();
+}
 
+void log_analyzer::WindowManager::waitInput() {
+    int ch;
     top = my_panels[2];
     while((ch = getch()) != 'q')
     {	switch(ch)
         {	case 9:
+                top = (PANEL *)panel_userptr(top);
+                top_panel(top);
+                break;
+            case KEY_UP:
                 top = (PANEL *)panel_userptr(top);
                 top_panel(top);
                 break;
@@ -73,14 +80,17 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     wins[0] = newwin(halfHeight, halfWidth, 0, 0);
     sprintf(label, "Chose check");
     win_show(wins[0], label, 1);
+    wmove(wins[0], 3, 1);
 
     wins[1] = newwin(halfHeight, halfWidth, 0, halfWidth);
     sprintf(label, "Window Number %d", 2);
     win_show(wins[1], label, 2);
+    wmove(wins[1], 3, 1);
 
     wins[2] = newwin(halfHeight, fullWidth, halfHeight, 0);
     sprintf(label, "Logs");
     win_show(wins[2], label, 2);
+    wmove(wins[2], 3, 1);
 }
 
 /* Show the window with a border and a label */
@@ -129,7 +139,7 @@ void log_analyzer::WindowManager::print_in_body(WINDOW *win, int starty, int sta
         win = stdscr;
     getyx(win, y, x);
     if(startx != 0)
-        x = startx;
+        x = startx + 1;
     if(starty != 0)
         y = starty;
     if(width == 0)
@@ -137,7 +147,6 @@ void log_analyzer::WindowManager::print_in_body(WINDOW *win, int starty, int sta
 
     length = strlen(string);
     temp = (width - length)/ 2;
-    x = startx + (int)temp;
     wattron(win, color);
     mvwprintw(win, y, x, "%s", string);
     wattroff(win, color);
