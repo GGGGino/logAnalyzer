@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "./WindowManager.h"
 #include "./WindowPanelReadLines.h"
+#include "../lineParser/LineParser.h"
 
 log_analyzer::WindowManager::WindowManager() {
     int ch;
@@ -72,15 +73,18 @@ void log_analyzer::WindowManager::waitInput() {
                 top = (PANEL *)panel_userptr(top);
                 top_panel(top);
                 break;
-            case KEY_DOWN:
-                top = (PANEL *)panel_userptr(top);
-                top_panel(top);
+            default:
+                my_windows.at(0)->waitInput(ch);
                 break;
         }
         update_panels();
         doupdate();
     }
     endwin();
+}
+
+void log_analyzer::WindowManager::initialDraws() {
+    my_windows.at(0)->draw();
 }
 
 /* Show the window with a border and a label */
@@ -96,6 +100,12 @@ void log_analyzer::WindowManager::win_show(WINDOW *win, char *label, int label_c
     mvwaddch(win, 2, width - 1, ACS_RTEE);
 
     print_in_middle(win, 1, 0, width, label, COLOR_PAIR(label_color));
+}
+
+void log_analyzer::WindowManager::addLineToListPanel(LineParser &lineParser) {
+    WindowPanelReadLines *panelList = (WindowPanelReadLines *) my_windows.at(0);
+
+    panelList->addLine(lineParser);
 }
 
 void log_analyzer::WindowManager::print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color) {

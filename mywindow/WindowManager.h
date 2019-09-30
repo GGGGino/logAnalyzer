@@ -8,8 +8,9 @@
 #define NCOLS 60
 
 #include <panel.h>
-#include "WindowPanelBase.h"
 #include <vector>
+#include "WindowPanelBase.h"
+#include "../lineParser/LineParser.h"
 
 namespace log_analyzer {
     class WindowManager {
@@ -29,6 +30,8 @@ namespace log_analyzer {
         void waitInput();
         void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
         void print_in_body(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
+        void addLineToListPanel(LineParser &lineParser);
+        void initialDraws();
     };
 }
 

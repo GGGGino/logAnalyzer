@@ -27,7 +27,7 @@ int main(int ac, char* av[]) {
         po::notify(vm);
 
         log_analyzer::WindowManager windowManager = createPanel();
-        
+
         if (vm.count("help")) {
             std::cout << desc << "\n";
             return 0;
@@ -48,19 +48,15 @@ int main(int ac, char* av[]) {
 
             std::string line;
             log_analyzer::LogChecker logChecker;
-            int riga = 3;
 
             while ( getline(fileS, line) ){
                 // std::cout << line << std::endl;
                 log_analyzer::LineParser lineParsed(line);
                 logChecker.addLine(lineParsed);
-
-                char cstr[20];
-                strcpy(cstr, lineParsed.ip_.c_str());
-
-                windowManager.print_in_body(windowManager.my_wins[2], riga, 1, 0, cstr, COLOR_PAIR(0));
-                riga++;
+                windowManager.addLineToListPanel(lineParsed);
             }
+
+            windowManager.initialDraws();
 
             bool checkViolation = logChecker.checkViolation();
 
