@@ -12,7 +12,7 @@
 log_analyzer::SqlInjectionChecker::SqlInjectionChecker(vectorLines *lines, LogChecker &logChecker):
 CheckerInterface(lines, logChecker) {}
 
-bool log_analyzer::SqlInjectionChecker::check() const{
+bool log_analyzer::SqlInjectionChecker::check() const {
     if( lines_->empty() )
         return true;
 
@@ -20,6 +20,8 @@ bool log_analyzer::SqlInjectionChecker::check() const{
         if( checkUrl(&line.realUrl_) )
             return true;
     }
+
+    return false;
 }
 
 bool log_analyzer::SqlInjectionChecker::checkUrl(const log_analyzer::Uri *url) const {

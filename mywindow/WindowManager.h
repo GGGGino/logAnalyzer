@@ -8,6 +8,8 @@
 #define NCOLS 60
 
 #include <panel.h>
+#include "WindowPanelBase.h"
+#include <vector>
 
 namespace log_analyzer {
     class WindowManager {
@@ -16,6 +18,7 @@ namespace log_analyzer {
         static constexpr int secondWindow = 0;
         static constexpr int logsWindow = 0;
 
+        std::vector<WindowPanelBase *> my_windows;
         WINDOW *my_wins[3];
         PANEL  *my_panels[3];
         PANEL  *top;

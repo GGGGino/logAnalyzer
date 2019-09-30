@@ -6,6 +6,7 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include "./WindowManager.h"
+#include "./WindowPanelReadLines.h"
 
 log_analyzer::WindowManager::WindowManager() {
     int ch;
@@ -26,14 +27,12 @@ log_analyzer::WindowManager::WindowManager() {
     init_wins(my_wins, 3);
 
     /* Attach a panel to each window */ 	/* Order is bottom up */
-    my_panels[0] = new_panel(my_wins[0]); 	/* Push 0, order: stdscr-0 */
-    my_panels[1] = new_panel(my_wins[1]); 	/* Push 1, order: stdscr-0-1 */
-    my_panels[2] = new_panel(my_wins[2]); 	/* Push 2, order: stdscr-0-1-2 */
+    // my_panels[0] = new_panel(my_wins[0]); 	/* Push 0, order: stdscr-0 */
+    // my_panels[1] = new_panel(my_wins[1]); 	/* Push 1, order: stdscr-0-1 */
+    // my_panels[2] = new_panel(my_wins[2]); 	/* Push 2, order: stdscr-0-1-2 */
 
     /* Set up the user pointers to the next panel */
-    set_panel_userptr(my_panels[0], my_panels[1]);
-    set_panel_userptr(my_panels[1], my_panels[2]);
-    set_panel_userptr(my_panels[2], my_panels[0]);
+    // set_panel_userptr(my_panels[0], my_panels[1]);
 
     /* Update the stacking order. 2nd panel will be on top */
     update_panels();
@@ -45,26 +44,6 @@ log_analyzer::WindowManager::WindowManager() {
     doupdate();
 }
 
-void log_analyzer::WindowManager::waitInput() {
-    int ch;
-    top = my_panels[2];
-    while((ch = getch()) != 'q')
-    {	switch(ch)
-        {	case 9:
-                top = (PANEL *)panel_userptr(top);
-                top_panel(top);
-                break;
-            case KEY_UP:
-                top = (PANEL *)panel_userptr(top);
-                top_panel(top);
-                break;
-        }
-        update_panels();
-        doupdate();
-    }
-    endwin();
-}
-
 /* Put all the windows */
 void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     int x, y, i;
@@ -74,23 +53,34 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 
     const unsigned short int fullWidth = w.ws_col;
+    const unsigned short int fullHeight = w.ws_row - 2;
     const unsigned short int halfWidth = w.ws_col / 2;
     const unsigned short int halfHeight = w.ws_row / 2;
+    const unsigned short int thirdWidth = w.ws_col / 3;
 
-    wins[0] = newwin(halfHeight, halfWidth, 0, 0);
-    sprintf(label, "Chose check");
-    win_show(wins[0], label, 1);
-    wmove(wins[0], 3, 1);
+    WindowPanelReadLines *readLinePanel = new WindowPanelReadLines(0, 0, thirdWidth, fullHeight);
+    my_windows.push_back(readLinePanel);
+}
 
-    wins[1] = newwin(halfHeight, halfWidth, 0, halfWidth);
-    sprintf(label, "Window Number %d", 2);
-    win_show(wins[1], label, 2);
-    wmove(wins[1], 3, 1);
-
-    wins[2] = newwin(halfHeight, fullWidth, halfHeight, 0);
-    sprintf(label, "Logs");
-    win_show(wins[2], label, 2);
-    wmove(wins[2], 3, 1);
+void log_analyzer::WindowManager::waitInput() {
+    int ch;
+    top = my_windows.at(0)->getPanel();
+    
+    while((ch = getch()) != 'q') {
+        switch(ch) {
+            case 9:
+                top = (PANEL *)panel_userptr(top);
+                top_panel(top);
+                break;
+            case KEY_DOWN:
+                top = (PANEL *)panel_userptr(top);
+                top_panel(top);
+                break;
+        }
+        update_panels();
+        doupdate();
+    }
+    endwin();
 }
 
 /* Show the window with a border and a label */
