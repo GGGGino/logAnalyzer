@@ -6,3 +6,7 @@ log_analyzer::WindowPanelReadLines::WindowPanelReadLines(WINDOW *_win, int x, in
 void log_analyzer::WindowPanelReadLines::draw() {
 
 }
+
+void log_analyzer::WindowPanelReadLines::addLine(LineParser line) {
+    lines_.push_back(line);
+}

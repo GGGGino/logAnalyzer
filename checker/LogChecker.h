@@ -16,7 +16,7 @@ namespace log_analyzer {
     /** For academic purpose */
     typedef std::vector<LineParser> vectorLines;
     typedef std::vector<CheckerInterface *> vectorCheckers;
-    typedef std::map<std::string, std::vector<log_analyzer::LineParser*>> MapIpsLines;
+    typedef std::map<std::string, std::vector<LineParser*>> MapIpsLines;
 
     class LogChecker {
     private:
