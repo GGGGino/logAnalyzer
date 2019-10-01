@@ -8,22 +8,27 @@ log_analyzer::WindowPanelReadLines::WindowPanelReadLines(int x, int y, int width
 void log_analyzer::WindowPanelReadLines::draw() {
     int riga = 3, i = 0, availableHeight = height - 4, cursorScroll = 0;
 
-    if (selectedLine > availableHeight) {
-        cursorScroll = selectedLine - availableHeight;
+    if (selectedLine >= availableHeight) {
+        cursorScroll = selectedLine - availableHeight + 1;
     }
 
-    auto lineSliced = std::vector<LineParser>(lines_.begin() + cursorScroll, lines_.begin() + availableHeight);
+    i = cursorScroll;
+
+    auto lineSliced = std::vector<LineParser>(lines_.begin() + cursorScroll, lines_.begin() + availableHeight + cursorScroll);
 
     for ( LineParser &line: lineSliced ) {
-        char cstr[20];
-        strcpy(cstr, line.ip_.c_str());
+        // non reinizializza l'array
+        char cstr[22];
+        std::string stringToPrint = std::to_string(i) + " - " + line.ip_;
+        strcpy(cstr, stringToPrint.c_str());
 
         if (selectedLine == i)
             print_in_body(win, riga, 1, 0, cstr, COLOR_PAIR(2));
         else
             print_in_body(win, riga, 1, 0, cstr, COLOR_PAIR(0));
 
-        riga++;
+        if (riga < height )
+            riga++;
         i++;
     }
 }
@@ -37,7 +42,7 @@ void log_analyzer::WindowPanelReadLines::waitInput(int input) {
             }
             break;
         case KEY_DOWN:
-            if (selectedLine < lines_.size()) {
+            if (selectedLine < (lines_.size() - 10)) {
                 selectedLine++;
                 draw();
             }
