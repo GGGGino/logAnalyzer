@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include "WindowPanelDetail.h"
+#include "../lineParser/LineParser.h"
 
 log_analyzer::WindowPanelDetail::WindowPanelDetail(int x, int y, int width, int height):
     WindowPanelBase(x, y, width, height) {}
@@ -23,8 +24,9 @@ void log_analyzer::WindowPanelDetail::setLine(LineParser *line_) {
     print_in_body(win, 3, 1, 0, "Funziona", COLOR_PAIR(2));
 }
 
-// template <class DataType>
-// void log_analyzer::WindowPanelBase::receiveData(DataType data) {
-//     int i = 0;
-//     i++;
-// }
+void log_analyzer::WindowPanelDetail::receiveLine(LineParser &line) {
+    char cstr[22];
+    std::string stringToPrint = "IP: " + line.ip_;
+    strcpy(cstr, stringToPrint.c_str());
+    print_in_body(win, 3, 1, 0, cstr, COLOR_PAIR(2));
+}

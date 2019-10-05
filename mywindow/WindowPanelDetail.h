@@ -14,8 +14,7 @@ namespace log_analyzer {
             void setLine(LineParser *line_);
             void waitInput(int input);
 
-            // template <class DataType>
-            // void receiveData(DataType data);
+            void receiveLine(LineParser &line);
             
             void draw();
     };

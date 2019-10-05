@@ -15,11 +15,8 @@ namespace log_analyzer {
             WindowPanelReadLines(int x, int y, int width, int height);
             void addLine(LineParser line);
             void waitInput(int input);
-            
-            // template <typename T> void sendData(T data);
 
-            template<typename T>
-            void sendData(T &data);
+            void sendLine(LineParser &line);
 
             void draw();
     };

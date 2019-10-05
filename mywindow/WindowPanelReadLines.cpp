@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include "WindowPanelReadLines.h"
+#include "../lineParser/LineParser.h"
 
 log_analyzer::WindowPanelReadLines::WindowPanelReadLines(int x, int y, int width, int height):
     WindowPanelBase(x, y, width, height) {}
@@ -51,9 +52,8 @@ void log_analyzer::WindowPanelReadLines::waitInput(int input) {
             }
             break;
         case 10:
-            int pippo = 5;
             // Qui non va bene perchè non compila
-            sendData<int>(pippo);
+            sendLine(lines_.at(selectedLine));
             break;
     }
 }
@@ -62,7 +62,6 @@ void log_analyzer::WindowPanelReadLines::addLine(LineParser line) {
     lines_.push_back(line);
 }
 
-template <typename T>
-void log_analyzer::WindowPanelReadLines::sendData(T &data) {
-    //nextMyWindow->receiveData(data);
+void log_analyzer::WindowPanelReadLines::sendLine(LineParser &line) {
+    nextMyWindow->receiveLine(line);
 }

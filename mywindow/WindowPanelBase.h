@@ -2,6 +2,7 @@
 #define LOGANALYZER_WINDOWPANELBASE_H
 
 #include <panel.h>
+#include "../lineParser/LineParser.h"
 
 namespace log_analyzer {
     class WindowPanelBase {
@@ -21,10 +22,8 @@ namespace log_analyzer {
             WINDOW *getWindow();
             PANEL *getPanel();
 
-            template <typename T> void sendData(T data);
-
-            // template <typename DataType>
-            // void receiveData(DataType data);
+            virtual void sendLine(LineParser &line);
+            virtual void receiveLine(LineParser &line);
             
             virtual void waitInput(int input) = 0;
             virtual void draw() = 0;

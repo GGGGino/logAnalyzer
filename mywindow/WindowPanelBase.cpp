@@ -1,5 +1,6 @@
-#include "WindowPanelBase.h"
 #include <cstring>
+#include "WindowPanelBase.h"
+#include "../lineParser/LineParser.h"
 
 log_analyzer::WindowPanelBase::WindowPanelBase(int x, int y, int width, int height):
     x(x), y(y), width(width), height(height) {
@@ -85,10 +86,8 @@ void log_analyzer::WindowPanelBase::print_in_body(WINDOW *win, int starty, int s
     doupdate();
 }
 
-// template <typename T>
-// void log_analyzer::WindowPanelBase::sendData(T data) {
-//     nextMyWindow->receiveData(data);
-// }
+void log_analyzer::WindowPanelBase::sendLine(LineParser &line) {
+    nextMyWindow->receiveLine(line);
+}
 
-// template <typename DataType>
-// void log_analyzer::WindowPanelBase::receiveData(DataType data) {}
+void log_analyzer::WindowPanelBase::receiveLine(LineParser &line) {}
