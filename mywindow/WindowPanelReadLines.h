@@ -2,6 +2,7 @@
 #define LOGANALYZER_WINDOWPANELREADLINES_H
 
 #include <panel.h>
+#include "WindowPanelDetail.h"
 #include "WindowPanelBase.h"
 #include "../lineParser/LineParser.h"
 
@@ -14,6 +15,12 @@ namespace log_analyzer {
             WindowPanelReadLines(int x, int y, int width, int height);
             void addLine(LineParser line);
             void waitInput(int input);
+            
+            // template <typename T> void sendData(T data);
+
+            template<typename T>
+            void sendData(T &data);
+
             void draw();
     };
 }

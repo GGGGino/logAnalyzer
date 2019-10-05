@@ -26,14 +26,14 @@ int main(int ac, char* av[]) {
         po::store(po::parse_command_line(ac, av, desc), vm);
         po::notify(vm);
 
-        log_analyzer::WindowManager windowManager = createPanel();
-
         if (vm.count("help")) {
             std::cout << desc << "\n";
             return 0;
         }
 
         if (vm.count("file")) {
+            log_analyzer::WindowManager windowManager = createPanel();
+            
             const std::string fileName = vm["file"].as<std::string>();
             log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader(fileName);
             std::ifstream fileS = fileLoader.loadFile();

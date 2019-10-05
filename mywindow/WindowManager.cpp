@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "./WindowManager.h"
 #include "./WindowPanelReadLines.h"
+#include "./WindowPanelDetail.h"
 #include "../lineParser/LineParser.h"
 
 log_analyzer::WindowManager::WindowManager() {
@@ -61,20 +62,28 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
 
     WindowPanelReadLines *readLinePanel = new WindowPanelReadLines(0, 0, thirdWidth, fullHeight);
     my_windows.push_back(readLinePanel);
+
+    WindowPanelDetail *detailPanel = new WindowPanelDetail(thirdWidth, 0, thirdWidth * 2, halfHeight);
+    my_windows.push_back(detailPanel);
+
+    readLinePanel->nextMyWindow = detailPanel;
+    detailPanel->nextMyWindow = readLinePanel;
 }
 
 void log_analyzer::WindowManager::waitInput() {
-    int ch;
-    top = my_windows.at(0)->getPanel();
+    int ch, initialPanel = 0;
+    WindowPanelBase *activePanel = my_windows.at(initialPanel);
+    top = activePanel->getPanel();
     
     while((ch = getch()) != 'q') {
         switch(ch) {
             case 9:
-                top = (PANEL *)panel_userptr(top);
+                activePanel = activePanel->nextMyWindow;
+                top = activePanel->getPanel();
                 top_panel(top);
                 break;
             default:
-                my_windows.at(0)->waitInput(ch);
+                activePanel->waitInput(ch);
                 break;
         }
         update_panels();

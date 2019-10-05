@@ -84,3 +84,11 @@ void log_analyzer::WindowPanelBase::print_in_body(WINDOW *win, int starty, int s
     /* Show it on the screen */
     doupdate();
 }
+
+// template <typename T>
+// void log_analyzer::WindowPanelBase::sendData(T data) {
+//     nextMyWindow->receiveData(data);
+// }
+
+// template <typename DataType>
+// void log_analyzer::WindowPanelBase::receiveData(DataType data) {}

@@ -6,8 +6,8 @@ log_analyzer::WindowPanelReadLines::WindowPanelReadLines(int x, int y, int width
     WindowPanelBase(x, y, width, height) {}
 
 void log_analyzer::WindowPanelReadLines::draw() {
-    wclear(win);
-    win_show(win, "Chose check", COLOR_PAIR(2));
+    //wclear(win);
+    //win_show(win, "Chose check", COLOR_PAIR(2));
 
     int riga = 3, i = 0, availableHeight = height - 4, cursorScroll = 0;
 
@@ -50,9 +50,19 @@ void log_analyzer::WindowPanelReadLines::waitInput(int input) {
                 draw();
             }
             break;
+        case 10:
+            int pippo = 5;
+            // Qui non va bene perchè non compila
+            sendData<int>(pippo);
+            break;
     }
 }
 
 void log_analyzer::WindowPanelReadLines::addLine(LineParser line) {
     lines_.push_back(line);
+}
+
+template <typename T>
+void log_analyzer::WindowPanelReadLines::sendData(T &data) {
+    //nextMyWindow->receiveData(data);
 }

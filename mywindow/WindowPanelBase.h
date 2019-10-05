@@ -12,12 +12,20 @@ namespace log_analyzer {
             int width, height;
         
         public:
+            WindowPanelBase *nextMyWindow;
+
             WindowPanelBase(int x, int y, int width, int height);
             void win_show(WINDOW *win, char *label, int label_color);
             void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
             void print_in_body(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
             WINDOW *getWindow();
             PANEL *getPanel();
+
+            template <typename T> void sendData(T data);
+
+            // template <typename DataType>
+            // void receiveData(DataType data);
+            
             virtual void waitInput(int input) = 0;
             virtual void draw() = 0;
     };
