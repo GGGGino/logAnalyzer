@@ -7,8 +7,8 @@ log_analyzer::WindowPanelReadLines::WindowPanelReadLines(int x, int y, int width
     WindowPanelBase(x, y, width, height) {}
 
 void log_analyzer::WindowPanelReadLines::draw() {
-    //wclear(win);
-    //win_show(win, "Chose check", COLOR_PAIR(2));
+    wclear(win);
+    win_show(win, "Chose check", COLOR_PAIR(2));
 
     int riga = 3, i = 0, availableHeight = height - 4, cursorScroll = 0;
 
