@@ -8,6 +8,7 @@
 #include "./WindowManager.h"
 #include "./WindowPanelReadLines.h"
 #include "./WindowPanelDetail.h"
+#include "./WindowPanelResults.h"
 #include "../lineParser/LineParser.h"
 
 log_analyzer::WindowManager::WindowManager() {
@@ -63,11 +64,15 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     WindowPanelReadLines *readLinePanel = new WindowPanelReadLines(0, 0, thirdWidth, fullHeight);
     my_windows.push_back(readLinePanel);
 
-    WindowPanelDetail *detailPanel = new WindowPanelDetail(thirdWidth, 0, thirdWidth * 2, halfHeight);
+    WindowPanelDetail *detailPanel = new WindowPanelDetail(thirdWidth, 0, thirdWidth * 2, halfHeight - 6);
     my_windows.push_back(detailPanel);
 
+    WindowPanelResults *resultsPanel = new WindowPanelResults(thirdWidth, halfHeight - 6, thirdWidth * 2, halfHeight + 5);
+    my_windows.push_back(resultsPanel);
+
     readLinePanel->nextMyWindow = detailPanel;
-    detailPanel->nextMyWindow = readLinePanel;
+    detailPanel->nextMyWindow = resultsPanel;
+    resultsPanel->nextMyWindow = readLinePanel;
 }
 
 void log_analyzer::WindowManager::waitInput() {
