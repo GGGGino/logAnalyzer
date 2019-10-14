@@ -10,6 +10,7 @@
 #include "./WindowPanelDetail.h"
 #include "./WindowPanelResults.h"
 #include "../lineParser/LineParser.h"
+#include "../checker/LogChecker.h"
 
 log_analyzer::WindowManager::WindowManager() {
     int ch;
@@ -68,6 +69,7 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     my_windows.push_back(detailPanel);
 
     WindowPanelResults *resultsPanel = new WindowPanelResults(thirdWidth, halfHeight - 6, thirdWidth * 2, halfHeight + 5);
+    resultsPanel->setChecker(logChecker);
     my_windows.push_back(resultsPanel);
 
     readLinePanel->nextMyWindow = detailPanel;
@@ -171,4 +173,8 @@ void log_analyzer::WindowManager::print_in_body(WINDOW *win, int starty, int sta
 
     /* Show it on the screen */
     doupdate();
+}
+
+void log_analyzer::WindowManager::setChecker(log_analyzer::LogChecker *logChecker_) {
+    logChecker = logChecker_;
 }

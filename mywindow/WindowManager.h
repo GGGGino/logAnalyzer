@@ -11,9 +11,12 @@
 #include <vector>
 #include "WindowPanelBase.h"
 #include "../lineParser/LineParser.h"
+#include "../checker/LogChecker.h"
 
 namespace log_analyzer {
     class WindowManager {
+    private:
+        log_analyzer::LogChecker *logChecker;
     public:
         static constexpr int choseCheckWindow = 0;
         static constexpr int secondWindow = 0;
@@ -32,6 +35,7 @@ namespace log_analyzer {
         void print_in_body(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
         void addLineToListPanel(LineParser &lineParser);
         void initialDraws();
+        void setChecker(log_analyzer::LogChecker *logChecker_);
     };
 }
 

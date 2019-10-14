@@ -39,15 +39,13 @@ int main(int ac, char* av[]) {
             std::ifstream fileS = fileLoader.loadFile();
             std::string pathCompleto = fileLoader.getFilePath();
 
-            // if (fileLoader.fileExists())
-            //     std::cout << fileLoader.getFilePath();
-
             if( !fileS.is_open() ) {
                 return 0;
             }
 
             std::string line;
             log_analyzer::LogChecker logChecker;
+            windowManager.setChecker(&logChecker);
 
             while ( getline(fileS, line) ){
                 // std::cout << line << std::endl;
@@ -55,14 +53,7 @@ int main(int ac, char* av[]) {
                 logChecker.addLine(lineParsed);
                 windowManager.addLineToListPanel(lineParsed);
             }
-
             windowManager.initialDraws();
-
-            bool checkViolation = logChecker.checkViolation();
-
-            if( !checkViolation ) {
-                std::cout << "Attack started" << std::endl;
-            }
 
             windowManager.waitInput();
 
