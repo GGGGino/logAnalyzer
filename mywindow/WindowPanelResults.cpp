@@ -1,5 +1,4 @@
 #include "WindowPanelResults.h"
-#include "../checker/LogChecker.h"
 
 log_analyzer::WindowPanelResults::WindowPanelResults(int x, int y, int width, int height):
     WindowPanelBase(x, y, width, height) {}
@@ -14,6 +13,8 @@ void log_analyzer::WindowPanelResults::waitInput(int input) {
 
             if( !checkViolation ) {
                 print_in_body(win, 4, 1, 0, "Attacco", COLOR_PAIR(2));
+            } else {
+                print_in_body(win, 4, 1, 0, "Non Attacco", COLOR_PAIR(2));
             }
             break;
     }

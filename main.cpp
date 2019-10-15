@@ -10,8 +10,8 @@
 
 namespace po = boost::program_options;
 
-log_analyzer::WindowManager createPanel() {
-    return log_analyzer::WindowManager();
+log_analyzer::WindowManager createPanel(log_analyzer::LogChecker &logChecker) {
+    return log_analyzer::WindowManager(logChecker);
 }
 
 int main(int ac, char* av[]) {
@@ -31,9 +31,7 @@ int main(int ac, char* av[]) {
             return 0;
         }
 
-        if (vm.count("file")) {
-            log_analyzer::WindowManager windowManager = createPanel();
-            
+        if (vm.count("file")) {            
             const std::string fileName = vm["file"].as<std::string>();
             log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader(fileName);
             std::ifstream fileS = fileLoader.loadFile();
@@ -45,7 +43,7 @@ int main(int ac, char* av[]) {
 
             std::string line;
             log_analyzer::LogChecker logChecker;
-            windowManager.setChecker(&logChecker);
+            log_analyzer::WindowManager windowManager = createPanel(logChecker);
 
             while ( getline(fileS, line) ){
                 // std::cout << line << std::endl;

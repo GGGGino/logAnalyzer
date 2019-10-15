@@ -27,7 +27,7 @@ namespace log_analyzer {
         PANEL  *my_panels[3];
         PANEL  *top;
 
-        WindowManager();
+        WindowManager(log_analyzer::LogChecker &logChecker_);
         void init_wins(WINDOW **wins, int n);
         void win_show(WINDOW *win, char *label, int label_color);
         void waitInput();

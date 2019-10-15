@@ -14,6 +14,4 @@ WindowPanelDetail.h
 WindowPanelResults.cpp
 WindowPanelResults.h)
 
-include_directories(${checker_SOURCE_DIR})
-
 add_library(mywindow SHARED ${mywindow_SRCS})

@@ -12,7 +12,7 @@
 #include "../lineParser/LineParser.h"
 #include "../checker/LogChecker.h"
 
-log_analyzer::WindowManager::WindowManager() {
+log_analyzer::WindowManager::WindowManager(log_analyzer::LogChecker &logChecker_): logChecker(&logChecker_) {
     int ch;
 
     /* Initialize curses */
