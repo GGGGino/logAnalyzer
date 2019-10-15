@@ -7,7 +7,6 @@
 
 #include <vector>
 #include "../lineParser/LineParser.h"
-#include "../lineParser/Uri.h"
 
 namespace log_analyzer {
     class LogChecker;
