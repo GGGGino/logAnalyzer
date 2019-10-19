@@ -18,6 +18,7 @@ namespace log_analyzer {
     public:
         explicit CheckerInterface(std::vector<LineParser> *lines, LogChecker &logChecker);
         virtual bool check() const = 0;
+        virtual const char *getName() const;
     };
 }
 

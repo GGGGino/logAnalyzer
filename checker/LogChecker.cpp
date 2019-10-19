@@ -38,7 +38,7 @@ bool log_analyzer::LogChecker::checkViolation() {
     vectorCheckers *checkers = getCheckers();
 
     for (auto const *checker: *checkers) {
-        if( !checker->check() ){
+        if (!checker->check()) {
             return false;
         }
     }
@@ -47,13 +47,15 @@ bool log_analyzer::LogChecker::checkViolation() {
 }
 
 log_analyzer::vectorCheckers *log_analyzer::LogChecker::getCheckers() {
-    if( !checkers_.empty() ){
+    if (!checkers_.empty()) {
         return  &checkers_;
     }
 
     auto *checkMlt = new ManyLogInTimeChecker(&lines_, *this);
-
     checkers_.push_back(checkMlt);
+
+    auto *checkSql = new SqlInjectionChecker(&lines_, *this);
+    checkers_.push_back(checkSql);
 
     return &checkers_;
 }
