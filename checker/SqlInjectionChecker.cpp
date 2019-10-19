@@ -25,9 +25,9 @@ bool log_analyzer::SqlInjectionChecker::check() const {
 }
 
 bool log_analyzer::SqlInjectionChecker::checkUrl(const log_analyzer::Uri *url) const {
-    std::string query = url->query_;
+    const std::string query = url->query_;
 
-    if( query.find("SELECT") != std::string::npos )
+    if( query.find("SELECT") != std::string::npos || query.find("UNION") != std::string::npos )
         return true;
 
     return false;

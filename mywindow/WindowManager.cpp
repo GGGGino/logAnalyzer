@@ -68,7 +68,7 @@ void log_analyzer::WindowManager::init_wins(WINDOW **wins, int n) {
     WindowPanelDetail *detailPanel = new WindowPanelDetail(thirdWidth, 0, thirdWidth * 2, halfHeight - 6);
     my_windows.push_back(detailPanel);
 
-    WindowPanelResults *resultsPanel = new WindowPanelResults(thirdWidth, halfHeight - 6, thirdWidth * 2, halfHeight + 5);
+    WindowPanelResults *resultsPanel = new WindowPanelResults(thirdWidth, halfHeight - 6, thirdWidth * 2, halfHeight + 4);
     resultsPanel->setChecker(logChecker);
     my_windows.push_back(resultsPanel);
 
