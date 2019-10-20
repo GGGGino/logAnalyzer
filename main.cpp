@@ -10,8 +10,8 @@
 
 namespace po = boost::program_options;
 
-log_analyzer::WindowManager createPanel() {
-    return log_analyzer::WindowManager();
+log_analyzer::WindowManager createPanel(log_analyzer::LogChecker &logChecker) {
+    return log_analyzer::WindowManager(logChecker);
 }
 
 int main(int ac, char* av[]) {
@@ -26,21 +26,16 @@ int main(int ac, char* av[]) {
         po::store(po::parse_command_line(ac, av, desc), vm);
         po::notify(vm);
 
-        log_analyzer::WindowManager windowManager = createPanel();
-        
         if (vm.count("help")) {
             std::cout << desc << "\n";
             return 0;
         }
 
-        if (vm.count("file")) {
+        if (vm.count("file")) {            
             const std::string fileName = vm["file"].as<std::string>();
             log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader(fileName);
             std::ifstream fileS = fileLoader.loadFile();
             std::string pathCompleto = fileLoader.getFilePath();
-
-            // if (fileLoader.fileExists())
-            //     std::cout << fileLoader.getFilePath();
 
             if( !fileS.is_open() ) {
                 return 0;
@@ -48,25 +43,15 @@ int main(int ac, char* av[]) {
 
             std::string line;
             log_analyzer::LogChecker logChecker;
-            int riga = 3;
+            log_analyzer::WindowManager windowManager = createPanel(logChecker);
 
             while ( getline(fileS, line) ){
                 // std::cout << line << std::endl;
                 log_analyzer::LineParser lineParsed(line);
                 logChecker.addLine(lineParsed);
-
-                char cstr[20];
-                strcpy(cstr, lineParsed.ip_.c_str());
-
-                windowManager.print_in_body(windowManager.my_wins[2], riga, 1, 0, cstr, COLOR_PAIR(0));
-                riga++;
+                windowManager.addLineToListPanel(lineParsed);
             }
-
-            bool checkViolation = logChecker.checkViolation();
-
-            if( !checkViolation ) {
-                std::cout << "Attack started" << std::endl;
-            }
+            windowManager.initialDraws();
 
             windowManager.waitInput();
 

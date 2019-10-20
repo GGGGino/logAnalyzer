@@ -13,8 +13,9 @@
 namespace log_analyzer {
     class ManyLogInTimeChecker: public CheckerInterface {
     public:
-        bool check() const;
         explicit ManyLogInTimeChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
+        bool check() const;
+        char const *getName() const;
     };
 }
 

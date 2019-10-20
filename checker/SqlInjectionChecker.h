@@ -15,6 +15,7 @@ namespace log_analyzer {
     public:
         bool check() const;
         bool checkUrl(const log_analyzer::Uri *url) const;
+        char const *getName() const;
         explicit SqlInjectionChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
     };
 }

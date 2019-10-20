@@ -4,6 +4,9 @@
 
 #include <map>
 #include "./LogChecker.h"
+#include "ManyLogInTimeChecker.h"
+#include "SqlInjectionChecker.h"
+#include "CrossScriptingChecker.h"
 
 void log_analyzer::LogChecker::addLine(log_analyzer::LineParser line) {
     lines_.push_back(line);
@@ -38,7 +41,7 @@ bool log_analyzer::LogChecker::checkViolation() {
     vectorCheckers *checkers = getCheckers();
 
     for (auto const *checker: *checkers) {
-        if( !checker->check() ){
+        if (!checker->check()) {
             return false;
         }
     }
@@ -47,13 +50,18 @@ bool log_analyzer::LogChecker::checkViolation() {
 }
 
 log_analyzer::vectorCheckers *log_analyzer::LogChecker::getCheckers() {
-    if( !checkers_.empty() ){
+    if (!checkers_.empty()) {
         return  &checkers_;
     }
 
     auto *checkMlt = new ManyLogInTimeChecker(&lines_, *this);
-
     checkers_.push_back(checkMlt);
+
+    auto *checkSql = new SqlInjectionChecker(&lines_, *this);
+    checkers_.push_back(checkSql);
+
+    auto *checkCsc = new CrossScriptingChecker(&lines_, *this);
+    checkers_.push_back(checkCsc);
 
     return &checkers_;
 }

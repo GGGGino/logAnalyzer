@@ -12,6 +12,13 @@
 log_analyzer::ManyLogInTimeChecker::ManyLogInTimeChecker(vectorLines *lines, LogChecker &logChecker):
 CheckerInterface(lines, logChecker) {}
 
+char const *log_analyzer::ManyLogInTimeChecker::getName() const {
+    // Per ritornare un char array è la miglior cosa
+    char *name = new char[20];
+    strcpy(name, "Many log in time");
+    return name;
+}
+
 bool log_analyzer::ManyLogInTimeChecker::check() const {
     typedef std::map<std::string, std::vector<log_analyzer::LineParser>> MapType;
     typedef std::map<std::string, int> MapTypeSimple;

@@ -7,7 +7,6 @@
 
 #include <vector>
 #include "../lineParser/LineParser.h"
-#include "../lineParser/Uri.h"
 
 namespace log_analyzer {
     class LogChecker;
@@ -18,7 +17,10 @@ namespace log_analyzer {
         LogChecker &logChecker;
     public:
         explicit CheckerInterface(std::vector<LineParser> *lines, LogChecker &logChecker);
+        /* Return true in case of attack */
         virtual bool check() const = 0;
+        /* Return the name of the Checker */
+        virtual const char *getName() const;
     };
 }
 
