@@ -10,6 +10,7 @@ namespace log_analyzer {
 
     public:
         explicit CrossScriptingChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
+        bool check() const;
     };
 }
 

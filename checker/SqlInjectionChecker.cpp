@@ -21,7 +21,7 @@ char const *log_analyzer::SqlInjectionChecker::getName() const {
 
 bool log_analyzer::SqlInjectionChecker::check() const {
     if( lines_->empty() )
-        return true;
+        return false;
 
     for (const LineParser &line: *lines_) {
         if( checkUrl(&line.realUrl_) )

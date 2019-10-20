@@ -4,6 +4,9 @@
 
 #include <map>
 #include "./LogChecker.h"
+#include "ManyLogInTimeChecker.h"
+#include "SqlInjectionChecker.h"
+#include "CrossScriptingChecker.h"
 
 void log_analyzer::LogChecker::addLine(log_analyzer::LineParser line) {
     lines_.push_back(line);
@@ -56,6 +59,9 @@ log_analyzer::vectorCheckers *log_analyzer::LogChecker::getCheckers() {
 
     auto *checkSql = new SqlInjectionChecker(&lines_, *this);
     checkers_.push_back(checkSql);
+
+    auto *checkCsc = new CrossScriptingChecker(&lines_, *this);
+    checkers_.push_back(checkCsc);
 
     return &checkers_;
 }
