@@ -14,8 +14,8 @@ void log_analyzer::WindowPanelResults::waitInput(int input) {
 
             for (auto const *checker: *checkers) {
                 char completeResult[50] = {0};
-                char const * checkerName = checker->getName();
-                char const * result = checker->check() ? ": Non Attacco" : ": Attacco";
+                char const *checkerName = checker->getName();
+                char const *result = checker->check() ? ": Non Attacco" : ": Attacco";
                 strcat(completeResult, checkerName); // copy string one into the result.
                 strcat(completeResult, result);
                 if (!checker->check()) {
@@ -24,6 +24,7 @@ void log_analyzer::WindowPanelResults::waitInput(int input) {
                     print_in_body(win, counterRow, 1, 0, completeResult, COLOR_PAIR(2));
                 }
                 counterRow++;
+                delete[] checkerName;
             }
 
             break;

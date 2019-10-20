@@ -12,6 +12,13 @@
 log_analyzer::SqlInjectionChecker::SqlInjectionChecker(vectorLines *lines, LogChecker &logChecker):
 CheckerInterface(lines, logChecker) {}
 
+char const *log_analyzer::SqlInjectionChecker::getName() const {
+    char *nome = new char;
+    strcpy(nome, "Sql Injectiondistocazzo");
+
+    return nome;
+}
+
 bool log_analyzer::SqlInjectionChecker::check() const {
     if( lines_->empty() )
         return true;

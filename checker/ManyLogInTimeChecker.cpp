@@ -13,7 +13,9 @@ log_analyzer::ManyLogInTimeChecker::ManyLogInTimeChecker(vectorLines *lines, Log
 CheckerInterface(lines, logChecker) {}
 
 char const *log_analyzer::ManyLogInTimeChecker::getName() const {
-    const char name[20] = "Many log in time";
+    // Per ritornare un char array è la miglior cosa
+    char *name = new char[20];
+    strcpy(name, "Many log in time");
     return name;
 }
 

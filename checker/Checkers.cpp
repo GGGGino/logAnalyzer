@@ -13,6 +13,7 @@ log_analyzer::CheckerInterface::CheckerInterface(vectorLines *lines, LogChecker 
 lines_(lines), logChecker(logChecker) {}
 
 const char *log_analyzer::CheckerInterface::getName() const {
-    const char stringa[20] = "Checker generic";
+    char *stringa = new char[20];
+    strcpy(stringa, "Checker generic");
     return stringa;
 }
