@@ -14,7 +14,7 @@ CheckerInterface(lines, logChecker) {}
 
 char const *log_analyzer::SqlInjectionChecker::getName() const {
     char *nome = new char;
-    strcpy(nome, "Sql Injectiondistocazzo");
+    strcpy(nome, "Sql Injection");
 
     return nome;
 }
