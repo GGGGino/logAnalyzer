@@ -13,23 +13,12 @@ void log_analyzer::WindowPanelResults::waitInput(int input) {
             vectorCheckers *checkers = logChecker->getCheckers();
             int counterRow = 4;
             int8_t indice = 0;
-            std::thread checkThread[3];
+            std::thread *checkThreads = new std::thread[checkers->size()];
+            bool *checkerResults = new bool[checkers->size()];
 
             for (auto const *checker: *checkers) {
-                checkThread[indice] = std::thread([&]() {
-                    char completeResult[50] = {0};
-                    char const *checkerName = checker->getName();
-                    char const *result = checker->check() ? ": Non Attacco" : ": Attacco";
-                    strcat(completeResult, checkerName); // copy string one into the result.
-                    strcat(completeResult, result);
-                    if (!checker->check()) {
-                        print_in_body(win, counterRow, 1, 0, completeResult, COLOR_PAIR(2));
-                    } else {
-                        print_in_body(win, counterRow, 1, 0, completeResult, COLOR_PAIR(2));
-                    }
-                    ++counterRow;
-                    delete[] checkerName;
-                    // return resultsCheck.push_back(checker->check());
+                checkThreads[indice] = std::thread([checker, checkerResults, indice]() {
+                    checkerResults[indice] = checker->check();
                 });
                 indice++;
             }
@@ -37,9 +26,26 @@ void log_analyzer::WindowPanelResults::waitInput(int input) {
             indice = 0;
 
             for (auto const *checker: *checkers) {
-                checkThread[indice].join();
-                indice++;
+                checkThreads[indice].join();
+                const bool checkResult = checkerResults[indice];
+                char completeResult[50] = {0};
+                char const *checkerName = checker->getName();
+                char const *result = checkResult ? ": Non Attacco" : ": Attacco";
+                strcat(completeResult, checkerName); // copy string one into the result.
+                strcat(completeResult, result);
+                if (!checkResult) {
+                    print_in_body(win, counterRow, 1, 0, completeResult, COLOR_PAIR(2));
+                } else {
+                    print_in_body(win, counterRow, 1, 0, completeResult, COLOR_PAIR(2));
+                }
+
+                delete checkerName;
+                ++indice;
+                ++counterRow;
             }
+
+            delete[] checkThreads;
+            delete[] checkerResults;
 
             break;
     }
