@@ -6,11 +6,11 @@
 namespace log_analyzer {
     class CrossScriptingChecker: public CheckerInterface {
     private:
-        std::vector<LineParser> *lines;
-
+        bool checkUrl(LineParser &line) const;
     public:
         explicit CrossScriptingChecker(std::vector<LineParser> *lines, LogChecker &logChecker);
         bool check() const;
+        const char *getName() const;
     };
 }
 

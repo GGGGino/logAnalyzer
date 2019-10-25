@@ -21,14 +21,14 @@ char const *log_analyzer::SqlInjectionChecker::getName() const {
 
 bool log_analyzer::SqlInjectionChecker::check() const {
     if( lines_->empty() )
-        return false;
+        return true;
 
     for (const LineParser &line: *lines_) {
         if( checkUrl(&line.realUrl_) )
-            return true;
+            return false;
     }
 
-    return false;
+    return true;
 }
 
 bool log_analyzer::SqlInjectionChecker::checkUrl(const log_analyzer::Uri *url) const {
