@@ -10,6 +10,22 @@ void log_analyzer::WindowPanelReadLines::draw() {
     wclear(win);
     win_show(win, "Chose check", COLOR_PAIR(2));
 
+    if (linesGrouped_.empty()) {
+        for (LineParser &line: lines_) {
+            bool found = false;
+
+            for (LineRepeatedType &lineRepeated: linesGrouped_) {
+                if (lineRepeated.first->ip_.compare(line.ip_) == 0) {
+                    found = true;
+                    ++lineRepeated.second;
+                    continue;
+                }
+            }
+
+            if (!found) { linesGrouped_.push_back(std::make_pair(&line, 1)); }
+        }
+    }
+
     int riga = 3, i = 0, availableHeight = height - 4, cursorScroll = 0;
 
     if (selectedLine >= availableHeight) {
@@ -18,12 +34,14 @@ void log_analyzer::WindowPanelReadLines::draw() {
 
     i = cursorScroll;
 
-    auto lineSliced = std::vector<LineParser>(lines_.begin() + cursorScroll, lines_.begin() + availableHeight + cursorScroll);
+    auto lineSliced = std::vector<LineRepeatedType>(linesGrouped_.begin() + cursorScroll, linesGrouped_.begin() + availableHeight + cursorScroll);
 
-    for ( LineParser &line: lineSliced ) {
+    for ( LineRepeatedType &line: lineSliced ) {
+        // Setto quila proprietà così ho la somma completa delle ripetizioni
+        line.first->accesses_n = line.second;
         // non reinizializza l'array
         char cstr[22];
-        std::string stringToPrint = std::to_string(i) + " - " + line.ip_;
+        std::string stringToPrint = std::to_string(i) + " - " + line.first->ip_;
         strcpy(cstr, stringToPrint.c_str());
 
         if (selectedLine == i)
@@ -53,7 +71,8 @@ void log_analyzer::WindowPanelReadLines::waitInput(int input) {
             break;
         case 10:
             // Qui non va bene perchè non compila
-            sendLine(lines_.at(selectedLine));
+            LineParser *lineToSend = linesGrouped_.at(selectedLine).first;
+            sendLine(*lineToSend);
             break;
     }
 }

@@ -31,7 +31,7 @@ int main(int ac, char* av[]) {
             return 0;
         }
 
-        if (vm.count("file")) {            
+        if (vm.count("file")) {
             const std::string fileName = vm["file"].as<std::string>();
             log_analyzer::FileLoader fileLoader = log_analyzer::FileLoader(fileName);
             std::ifstream fileS = fileLoader.loadFile();
@@ -51,8 +51,8 @@ int main(int ac, char* av[]) {
                 logChecker.addLine(lineParsed);
                 windowManager.addLineToListPanel(lineParsed);
             }
-            windowManager.initialDraws();
 
+            windowManager.initialDraws();
             windowManager.waitInput();
 
             return 0;

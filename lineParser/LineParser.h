@@ -30,6 +30,7 @@ namespace log_analyzer {
         int size_;
         std::string referrer_;
         std::string userAgent_;
+        int accesses_n = 1;
 
         explicit LineParser(const std::string &line = "");
 

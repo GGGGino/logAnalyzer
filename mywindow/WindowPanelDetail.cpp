@@ -38,12 +38,13 @@ void log_analyzer::WindowPanelDetail::receiveLine(LineParser &line) {
     print_in_body(win, 3, 22, 0, dateStr, COLOR_PAIR(2));
 
     char datePath[width/2];
-    std::string pathToPrint = "Url: " + line.realUrl_.path_;
+    std::string pathToPrint = "Url: " + line.realUrl_.path_ + line.realUrl_.query_;
     strcpy(datePath, pathToPrint.c_str());
     print_in_body(win, 4, 1, 0, datePath, COLOR_PAIR(2));
 
     char dateQuery[width/2];
-    std::string queryToPrint = "Query: " + line.realUrl_.query_;
+    std::string accessesString = std::to_string(line.accesses_n);
+    std::string queryToPrint = "Access n: " + accessesString;
     strcpy(dateQuery, queryToPrint.c_str());
     print_in_body(win, 4, width/2, 0, dateQuery, COLOR_PAIR(2));
 }
