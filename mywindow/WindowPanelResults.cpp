@@ -1,4 +1,5 @@
 #include <thread>
+#include <cstring>
 #include "WindowPanelResults.h"
 
 log_analyzer::WindowPanelResults::WindowPanelResults(int x, int y, int width, int height):

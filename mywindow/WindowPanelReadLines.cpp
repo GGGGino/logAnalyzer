@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include <cstring>
 #include "WindowPanelReadLines.h"
 #include "../lineParser/LineParser.h"
 

@@ -6,6 +6,7 @@
 #include <chrono>
 #include <map>
 #include <ctime>
+#include <cstring>
 #include "./Checkers.h"
 #include "./LogChecker.h"
 
